@@ -303,6 +303,36 @@ footer {
   max-width: 860px;
 }
 
+/* Research: folded abstracts of working papers */
+.abstract-toggle { margin-top: 10px; }
+.paper { scroll-margin-top: 28px; }
+
+.abstract-toggle summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  list-style: none;
+  color: var(--accent);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.85rem;
+}
+
+.abstract-toggle summary::-webkit-details-marker { display: none; }
+
+.abstract-toggle summary::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 5px solid currentColor;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  transition: transform 0.15s ease;
+}
+
+.abstract-toggle[open] summary::before { transform: rotate(90deg); }
+.abstract-toggle summary:hover { opacity: 0.72; }
+
 .paper p.presented {
   margin-top: 12px;
   font-size: 0.92rem;

@@ -47,21 +47,29 @@
   <section class="research-section">
     <h2>Working Papers</h2>
 
-    <article class="paper">
+    <article class="paper" id="etf">
       <div class="paper-top">
         <div>
           <div class="paper-title">Single-Stock ETFs</div>
           <div class="authors">with Yuchou Peng</div>
         </div>
       </div>
+      <details class="abstract-toggle">
+        <summary>Abstract</summary>
+        <p class="abstract">Single-stock leveraged and inverse ETFs must rebalance their exposures daily, generating predictable buy orders in the underlying stocks at the close after prices rise and sell orders after they fall. Because these funds rebalance at the closing price, their orders impose a cost on fund holders if they temporarily move that price and the move later reverses. We ask whether this cost persists even though the orders follow a public rule that lets other traders anticipate them. Using fund records and intraday data for 249 stocks from July 2022 through September 2026, we exploit variation in the size of these orders for a given stock return and relate it to closing-auction volume and subsequent returns. We find that larger predicted orders correspond to higher closing-auction volume and return reversals extending through the next afternoon. The implied annual cost is about 2.8% of assets for a +2× fund, 2.5 times the funds’ average expense ratio. Prices adjust before the close, yet anticipation does not eliminate the reversal. We present a model with risk-averse liquidity providers and gradually arriving long-term investors in which the reversal survives anticipation because liquidity providers must still bear part of the orders’ risk overnight.</p>
+      </details>
     </article>
 
-    <article class="paper">
+    <article class="paper" id="nonbank">
       <div class="paper-top">
         <div>
           <div class="paper-title">Organisation of Nonbank Lending</div>
         </div>
       </div>
+      <details class="abstract-toggle">
+        <summary>Abstract</summary>
+        <p class="abstract">Banks increasingly collaborate with nonbanks, combining their cheaper funding with nonbanks’ specialised borrower information. Nonbanks, however, derive nonpledgeable ancillary benefits from lending, giving them an incentive to misreport borrower quality. Three common collaboration arrangements (lending to nonbanks, buying their loans, and lending directly on their assessments) differ in whether the nonbank retains a stake in the loans and thus appear to create different reporting incentives. We show that all three can nevertheless implement the same optimal contract, delivering identical lending outcomes and nonbank profits at a common funding cost. The contract requires no stake in the loans. Instead, it induces truthful reporting by cancelling financing for the entire borrower pool if the bank detects misreporting and by tying the nonbank’s share of the loan surplus to how much of its report the bank can confirm. Higher funding costs reduce this surplus and disproportionately harm nonbanks with smaller borrower pools, forcing them to further adjust lending to preserve truthful reporting. Because nonbanks can switch arrangements, regulation that raises the cost of one cannot increase their funding costs beyond the gap to the next-cheapest alternative.</p>
+      </details>
     </article>
   </section>
 
@@ -101,6 +109,16 @@
   <div class="site-shell">Yingjie Huang · University of Amsterdam &amp; Tinbergen Institute · <a href="mailto:y.huang4@uva.nl">y.huang4@uva.nl</a></div>
 </footer>
 
+<script>
+  // Open a paper's folded abstract when the page is reached via its anchor (e.g. research.html#etf).
+  function openAbstractFromHash() {
+    var target = location.hash && document.getElementById(location.hash.slice(1));
+    var toggle = target && target.querySelector("details.abstract-toggle");
+    if (toggle) toggle.open = true;
+  }
+  openAbstractFromHash();
+  window.addEventListener("hashchange", openAbstractFromHash);
+</script>
 <script data-goatcounter="https://yingjiehuang.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
